@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         bottomNaviationView = findViewById(R.id.bottomNavigationView)
 
     bottomNaviationView.setOnItemSelectedListener { menuItem ->
-        when(menuItem.itemId) {
+        when (menuItem.itemId) {
             R.id.explore -> {
                 replaceFragment(ExploreFragment())
                 true
@@ -55,6 +55,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
 
 
 }
