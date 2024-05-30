@@ -6,26 +6,36 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.parcial.R
+import com.example.parcial.adapters.FlightAdapter
+import com.example.parcial.databinding.FragmentResultsBinding
+import com.example.parcial.model.FlightResponse
 
 class ResultsFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = ResultsFragment()
-    }
-
-    private val viewModel: ResultsViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
+    private var _binding: FragmentResultsBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_results, container, false)
+        _binding = FragmentResultsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val flights: List<FlightResponse> = arguments?.getParcelableArrayList<FlightResponse>("flights") ?: emptyList()
+
+        val flightAdapter = FlightAdapter(flights)
+        binding.recyclerView.adapter = flightAdapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
