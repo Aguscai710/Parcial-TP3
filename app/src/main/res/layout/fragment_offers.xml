@@ -1,14 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.offers.OffersFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="OFFERS"
-        android:textSize="60dp"/>
 
-</FrameLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarOffer"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Offers"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:id="@+id/container1"
+        android:background="@color/white"
+        android:layout_width="340dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/toolbarOffer"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/favorite_button1"
+                android:layout_width="36dp"
+                android:layout_height="31dp"
+                android:layout_gravity="end"
+                android:src="@drawable/baseline_favorite_border_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIMITED OFFER!"
+                android:textSize="13sp"
+                android:background="#32D4AD"
+                android:textStyle="bold"
+                android:padding="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get 20% disount with your Master credit cards"
+                android:textSize="19sp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="327dp"
+                android:layout_height="86dp"
+                android:src="@drawable/offer1" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/container2"
+        android:background="@color/white"
+        android:layout_width="340dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/container1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/favorite_button2"
+                android:layout_width="36dp"
+                android:layout_height="31dp"
+                android:layout_gravity="end"
+                android:src="@drawable/baseline_favorite_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIMITED OFFER!"
+                android:textSize="13sp"
+                android:background="#32D4AD"
+                android:textStyle="bold"
+                android:padding="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get 20% disount with your Master credit cards"
+                android:textSize="19sp"
+                android:textStyle="bold"/>
+            <ImageView
+                android:layout_width="327dp"
+                android:layout_height="86dp"
+                android:src="@drawable/offer2" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>

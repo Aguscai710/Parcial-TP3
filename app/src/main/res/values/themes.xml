@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.Parcial" parent="Base.Theme.Parcial" />
+    <style name="Offer" parent = "ThemeOverlay.AppCompat.Dark.ActionBar" />
 </resources>

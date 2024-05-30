@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
+import androidx.appcompat.widget.Toolbar
 import com.example.parcial.R
 
 class OffersFragment : Fragment() {
@@ -13,19 +16,50 @@ class OffersFragment : Fragment() {
     companion object {
         fun newInstance() = OffersFragment()
     }
+    private var isFavorite = false
 
     private val viewModel: OffersViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_offers, container, false)
+       val view = inflater.inflate(R.layout.fragment_offers, container, false)
+
+        val backButton = view.findViewById<ImageButton>(R.id.back_button)
+        val toolbar = view.findViewById<Toolbar>(R.id.toolbarOffer)
+        val favoriteButton = view.findViewById<ImageButton>(R.id.favorite_button1)
+        val favoriteButton2 = view.findViewById<ImageButton>(R.id.favorite_button2)
+
+        toolbar.title = "Offers"
+        backButton.setOnClickListener{
+            //LOGICA PARA VOLVER ATRAS
+        }
+        favoriteButton.setOnClickListener{
+            isFavorite = !isFavorite
+
+            // Actualizar la apariencia del botón según el estado
+            if (isFavorite) {
+                favoriteButton.setImageResource(R.drawable.baseline_favorite_border_24)
+            } else {
+                favoriteButton.setImageResource(R.drawable.baseline_favorite_24)
+            }
+        }
+        favoriteButton2.setOnClickListener{
+            isFavorite = !isFavorite
+
+            // Actualizar la apariencia del botón según el estado
+            if (isFavorite) {
+                favoriteButton2.setImageResource(R.drawable.baseline_favorite_border_24)
+            } else {
+                favoriteButton2.setImageResource(R.drawable.baseline_favorite_24)
+            }
+        }
+
+
+
+
+        return view
     }
+
 }
