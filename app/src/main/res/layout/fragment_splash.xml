@@ -5,13 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.splash.SplashFragment">
 
-    <TextView
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="splash"
-        android:textSize="50dp"
+        android:layout_height="match_parent"
+        android:background="#F5F2F2"
+        android:contentDescription="@string/app_name"
+        android:visibility="visible"
+        android:scaleType="fitXY"
+        android:src= "@drawable/splash"
         />
-
-
 
 </FrameLayout>

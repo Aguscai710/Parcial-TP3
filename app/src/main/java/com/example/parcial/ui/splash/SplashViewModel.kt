@@ -14,7 +14,7 @@ class SplashViewModel : ViewModel() {
 
     init {
         viewModelScope.launch {
-            delay(5000) // Delay for 5 seconds
+            delay(3000) // Delay for 5 seconds
             _navigateToMain.value = true
         }
     }

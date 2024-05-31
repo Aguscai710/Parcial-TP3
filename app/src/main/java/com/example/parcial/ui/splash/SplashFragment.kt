@@ -11,6 +11,8 @@ import androidx.lifecycle.Observer
 import com.example.parcial.R
 import com.example.parcial.databinding.FragmentSplashBinding
 import com.example.parcial.ui.explore.ExploreFragment
+import com.example.parcial.ui.main.MainActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class SplashFragment : Fragment() {
 
@@ -55,5 +57,15 @@ class SplashFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as? MainActivity)?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.GONE
+    }
+    override fun onPause() {
+        super.onPause()
+        // Mostrar BottomNavigationView cuando se pausa el fragmento
+        (activity as? MainActivity)?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
     }
 }

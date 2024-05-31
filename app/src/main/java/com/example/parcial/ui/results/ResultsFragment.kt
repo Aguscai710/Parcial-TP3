@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.parcial.R
-import com.example.parcial.adapters.FlightAdapter
+// import com.example.parcial.adapters.FlightAdapter
 import com.example.parcial.databinding.FragmentResultsBinding
-import com.example.parcial.model.FlightResponse
+//import com.example.parcial.model.FlightResponse
 
 class ResultsFragment : Fragment() {
     private var _binding: FragmentResultsBinding? = null
@@ -27,10 +27,10 @@ class ResultsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val flights: List<FlightResponse> = arguments?.getParcelableArrayList<FlightResponse>("flights") ?: emptyList()
+        //val flights: List<FlightResponse> = arguments?.getParcelableArrayList<FlightResponse>("flights") ?: emptyList()
 
-        val flightAdapter = FlightAdapter(flights)
-        binding.recyclerView.adapter = flightAdapter
+        //val flightAdapter = FlightAdapter(flights)
+        //binding.recyclerView.adapter = flightAdapter
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
     }
 
