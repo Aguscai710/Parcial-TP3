@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toolbar
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.example.parcial.R
@@ -47,7 +48,7 @@ class SplashFragment : Fragment() {
             if (navigate) {
                 // Transition to MainFragment
                 parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, ExploreFragment())
+                    .replace(R.id.nav_host, ExploreFragment())
                     .commit()
             }
         })
@@ -62,10 +63,11 @@ class SplashFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         (activity as? MainActivity)?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.GONE
+        (activity as? MainActivity)?.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)?.visibility = View.GONE
     }
     override fun onPause() {
         super.onPause()
-        // Mostrar BottomNavigationView cuando se pausa el fragmento
         (activity as? MainActivity)?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility = View.VISIBLE
+        (activity as? MainActivity)?.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)?.visibility = View.VISIBLE
     }
 }

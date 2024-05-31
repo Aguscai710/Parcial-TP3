@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, SplashFragment())
+                .replace(R.id.nav_host, SplashFragment())
                 .commit()
         }
 
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.nav_host, fragment)
             .commit()
     }
 

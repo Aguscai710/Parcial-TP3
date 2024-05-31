@@ -77,7 +77,7 @@
                 android:inAnimation="@android:anim/slide_in_left"
                 android:outAnimation="@android:anim/slide_out_right"
                 android:orientation="horizontal"
-                android:paddingBottom="50dp">
+                >
 
                 <ImageView
                     android:layout_width="280dp"

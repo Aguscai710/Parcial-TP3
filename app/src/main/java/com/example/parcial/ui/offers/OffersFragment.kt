@@ -26,15 +26,11 @@ class OffersFragment : Fragment() {
     ): View {
        val view = inflater.inflate(R.layout.fragment_offers, container, false)
 
-        val backButton = view.findViewById<ImageButton>(R.id.back_button)
-        val toolbar = view.findViewById<Toolbar>(R.id.toolbarOffer)
         val favoriteButton = view.findViewById<ImageButton>(R.id.favorite_button1)
         val favoriteButton2 = view.findViewById<ImageButton>(R.id.favorite_button2)
 
-        toolbar.title = "Offers"
-        backButton.setOnClickListener{
-            //LOGICA PARA VOLVER ATRAS
-        }
+
+
         favoriteButton.setOnClickListener{
             isFavorite = !isFavorite
 
