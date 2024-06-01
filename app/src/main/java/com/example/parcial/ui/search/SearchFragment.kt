@@ -13,7 +13,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.example.parcial.R
-import com.example.parcial.data.remote.RepositoryImpl
+
 import com.example.parcial.databinding.FragmentSearchBinding
 import com.example.parcial.ui.results.ResultsFragment
 import kotlinx.coroutines.launch

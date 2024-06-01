@@ -33,7 +33,7 @@
         android:id="@+id/resultsHeader"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/results_header"
+        android:src="@drawable/palawan"
         android:contentDescription="@string/list_header_res"
         app:layout_constraintTop_toBottomOf="@id/toolbarSearch"
         />

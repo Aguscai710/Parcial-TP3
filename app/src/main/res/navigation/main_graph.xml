@@ -5,52 +5,48 @@
     android:id="@+id/main_graph"
     app:startDestination="@id/splashFragment">
 
+
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.parcial.ui.profile.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.example.parcial.ui.search.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search">
-        <action
-            android:id="@+id/action_searchFragment_to_resultsFragment"
-            app:destination="@id/resultsFragment" />
-    </fragment>
+        android:id="@+id/exploreFragment"
+        android:name="com.example.parcial.ui.explore.ExploreFragment"
+        android:label="fragment_explore"
+        tools:layout="@layout/fragment_explore" />
     <fragment
         android:id="@+id/offersFragment"
         android:name="com.example.parcial.ui.offers.OffersFragment"
         android:label="fragment_offers"
         tools:layout="@layout/fragment_offers" />
     <fragment
-        android:id="@+id/exploreFragment2"
-        android:name="com.example.parcial.ui.explore.ExploreFragment"
-        android:label="fragment_explore"
-        tools:layout="@layout/fragment_explore" />
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.parcial.ui.main.MainActivity"
-        android:label="MainActivity" />
+        android:id="@+id/profileFragment"
+        android:name="com.example.parcial.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.example.parcial.ui.splash.SplashFragment"
-        android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" />
+        android:id="@+id/resultsFragment"
+        android:name="com.example.parcial.ui.results.ResultsFragment"
+        android:label="fragment_results"
+        tools:layout="@layout/fragment_results" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.parcial.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.parcial.ui.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
-        android:id="@+id/itemResultsFragment"
-        android:name="com.example.parcial.ui.detail.ItemResultsFragment"
-        android:label="fragment_item_results"
-        tools:layout="@layout/fragment_item_results" />
-    <fragment
-        android:id="@+id/resultsFragment"
-        android:name="com.example.parcial.ui.results.ResultsFragment"
-        android:label="fragment_results"
-        tools:layout="@layout/fragment_results" />
+        android:id="@+id/splashFragment"
+        android:name="com.example.parcial.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.parcial.ui.main.MainActivity"
+        android:label="MainActivity" />
 </navigation>
