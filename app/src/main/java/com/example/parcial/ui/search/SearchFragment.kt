@@ -6,10 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
+import com.example.parcial.R
+import com.example.parcial.data.remote.RepositoryImpl
 import com.example.parcial.databinding.FragmentSearchBinding
+import com.example.parcial.ui.results.ResultsFragment
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -45,8 +52,14 @@ class SearchFragment : Fragment() {
             showDatePickerDialog(editTextDepartureDate)
         }
 
+        // Handle button click to navigate to ItemResultsFragment
+        binding.buttonSearch.setOnClickListener {
+            binding.root.findNavController().navigate(R.id.action_searchFragment_to_resultsFragment, null)
+        }
+
         // Configuración de los Spinners
         setupSpinners()
+
     }
 
     private fun showDatePickerDialog(editText: EditText) {

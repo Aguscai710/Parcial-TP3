@@ -14,7 +14,11 @@
         android:id="@+id/searchFragment"
         android:name="com.example.parcial.ui.search.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/offersFragment"
         android:name="com.example.parcial.ui.offers.OffersFragment"
@@ -39,4 +43,14 @@
         android:name="com.example.parcial.ui.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/itemResultsFragment"
+        android:name="com.example.parcial.ui.detail.ItemResultsFragment"
+        android:label="fragment_item_results"
+        tools:layout="@layout/fragment_item_results" />
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.example.parcial.ui.results.ResultsFragment"
+        android:label="fragment_results"
+        tools:layout="@layout/fragment_results" />
 </navigation>

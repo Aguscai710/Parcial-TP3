@@ -3,4 +3,6 @@
     <string name="btn_search">Search</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="list_header_res">ListHeaderRes</string>
+    <string name="txt_results">ListHeaderResults</string>
 </resources>
