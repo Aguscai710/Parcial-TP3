@@ -1,11 +1,8 @@
 package com.example.parcial.ui.main
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
-import android.content.res.Configuration
 import android.os.Bundle
-import android.view.View
 import android.widget.Switch
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -29,12 +26,11 @@ import com.example.parcial.ui.settings.SettingsFragment
 import com.example.parcial.ui.splash.SplashFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.switchmaterial.SwitchMaterial
 
 class MainActivity : AppCompatActivity() {
 
-
     private lateinit var binding: ActivityMainBinding
+
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
@@ -43,31 +39,11 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-
-            val sharedPreferences: SharedPreferences =
-                getSharedPreferences("user_preferences", Context.MODE_PRIVATE)
-            val isDarkMode = sharedPreferences.getBoolean("dark_mode", false)
-
-
-            if (isDarkMode) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            }
-
-
-
         super.onCreate(savedInstanceState)
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
-
-
-
-
-
-
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -122,16 +98,15 @@ class MainActivity : AppCompatActivity() {
                     drawerLayout.closeDrawers()
                     true
                 }
-
                 R.id.settingsFragment -> {
                     replaceFragment(SettingsFragment())
                     drawerLayout.closeDrawers()
                     true
                 }
-
                 else -> false
             }
         }
+
 
         setupDrawerLayout()
 
