@@ -10,11 +10,15 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.parcial.R
 
 import com.example.parcial.databinding.FragmentSearchBinding
+import com.example.parcial.ui.main.MainActivity
 import com.example.parcial.ui.results.ResultsFragment
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -22,9 +26,7 @@ import java.util.*
 
 class SearchFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = SearchFragment()
-    }
+    private lateinit var navController: NavController
 
     private val viewModel: SearchViewModel by viewModels()
     private var _binding: FragmentSearchBinding? = null
@@ -32,7 +34,6 @@ class SearchFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // TODO: Use the ViewModel
     }
 
     override fun onCreateView(
@@ -52,9 +53,13 @@ class SearchFragment : Fragment() {
             showDatePickerDialog(editTextDepartureDate)
         }
 
+
+
         // Handle button click to navigate to ItemResultsFragment
         binding.buttonSearch.setOnClickListener {
-            binding.root.findNavController().navigate(R.id.action_searchFragment_to_resultsFragment, null)
+            val fragment = ResultsFragment()
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.nav_host,fragment)?.commit()
         }
 
         // Configuración de los Spinners

@@ -12,6 +12,8 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -93,8 +95,10 @@ class MainActivity : AppCompatActivity() {
         drawerLayout = binding.drawerLayout
         navigationView = binding.navView
         toolbar = binding.toolbar
-
         setSupportActionBar(toolbar)
+
+
+
         navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         supportActionBar?.setDisplayShowTitleEnabled(false)
         val navController = navHostFragment.navController

@@ -15,6 +15,7 @@
         android:scaleType="centerCrop"
         android:src="@drawable/boracay" />
 
+
     <!-- Foto de perfil centrada horizontalmente y ubicada sobre la imagen de fondo -->
     <ImageView
         android:id="@+id/profile_image"
@@ -26,13 +27,18 @@
         android:padding="8dp"
         android:translationX="-120dp"
         android:translationY="-50dp"/>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_below="@id/profile_image">
 
     <!-- Contenedor de los TextViews -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@id/profile_image"
         android:padding="16dp"
         android:translationY="-70dp">
 
@@ -157,5 +163,6 @@
         </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
