@@ -1,38 +1,84 @@
 package com.example.parcial.ui.results
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.parcial.R
-// import com.example.parcial.adapters.FlightAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.example.parcial.adapters.FlightAdapter
+import com.example.parcial.data.model.Flight
+import com.example.parcial.data.remote.RetrofitClient
 import com.example.parcial.databinding.FragmentResultsBinding
-//import com.example.parcial.model.FlightResponse
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
 
 class ResultsFragment : Fragment() {
+
+    private lateinit var flightAdapter: FlightAdapter
+    private lateinit var recyclerView: RecyclerView
     private var _binding: FragmentResultsBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: ResultsViewModel by viewModels()
+
+    companion object {
+        fun newInstance() = ResultsFragment()
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentResultsBinding.inflate(inflater, container, false)
+        recyclerView = binding.recyclerViewResults
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        flightAdapter = FlightAdapter(listOf())
+        recyclerView.adapter = flightAdapter
+
+        fetchFlights()
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    private fun fetchFlights() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val response = RetrofitClient.apiService.getFlights()
+                val flights = response.flightsList.map { bestFlight ->
+                    bestFlight.flights.firstOrNull()?.let { flight ->
+                        Flight(
+                            airline = flight.airline,
+                            duration = flight.duration,
+                            departure_airport = flight.departure_airport,
+                            arrival_airport = flight.arrival_airport,
+                            travel_class = flight.travel_class,
+                            airline_logo = flight.airline_logo,
+                            airplane = flight.airplane,
+                            extensions = flight.extensions,
+                            flight_number = flight.flight_number,
+                            legroom = flight.legroom,
+                            often_delayed_by_over_30_min = flight.often_delayed_by_over_30_min,
+                            overnight = flight.overnight
+                        )
+                    }
+                }.filterNotNull()
 
-        //val flights: List<FlightResponse> = arguments?.getParcelableArrayList<FlightResponse>("flights") ?: emptyList()
+                withContext(Dispatchers.Main) {
+                    flightAdapter.updateFlights(flights)
+                }
 
-        //val flightAdapter = FlightAdapter(flights)
-        //binding.recyclerView.adapter = flightAdapter
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
