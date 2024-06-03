@@ -38,19 +38,20 @@ class ResultsFragment : Fragment() {
     ): View {
         _binding = FragmentResultsBinding.inflate(inflater, container, false)
         recyclerView = binding.recyclerViewResults
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        flightAdapter = FlightAdapter(listOf())
+        recyclerView.layoutManager = LinearLayoutManager(this.context)
+        flightAdapter = FlightAdapter(emptyList())
         recyclerView.adapter = flightAdapter
 
         fetchFlights()
+
         return binding.root
     }
 
-    private fun fetchFlights() {
+    private fun  fetchFlights() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val response = RetrofitClient.apiService.getFlights()
-                val flights = response.flightsList.map { bestFlight ->
+                val flights = response.best_flights.map { bestFlight ->
                     bestFlight.flights.firstOrNull()?.let { flight ->
                         Flight(
                             airline = flight.airline,
@@ -64,7 +65,8 @@ class ResultsFragment : Fragment() {
                             flight_number = flight.flight_number,
                             legroom = flight.legroom,
                             often_delayed_by_over_30_min = flight.often_delayed_by_over_30_min,
-                            overnight = flight.overnight
+                            overnight = flight.overnight,
+                            price = bestFlight.price
                         )
                     }
                 }.filterNotNull()

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
@@ -72,7 +73,7 @@
 
         <LinearLayout
             android:layout_width="343dp"
-            android:layout_height="45dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="62dp"
             android:orientation="horizontal"
             android:paddingLeft="12dp"
@@ -84,13 +85,14 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/txtDepartureAirportId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter"
                     android:hint="ID"
                     android:textColor="@color/blue2"
-                    android:textSize="20sp"
-                    android:textFontWeight="700"/>
+                    android:textFontWeight="700"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/txtDepartureAirport"
@@ -121,9 +123,9 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/txtArrivalAirportId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
                     android:fontFamily="@font/inter"
                     android:hint="ID"
                     android:textColor="@color/blue2"
@@ -200,7 +202,7 @@
                         android:layout_width="37dp"
                         android:layout_height="16dp"
                         android:fontFamily="@font/inter"
-                        android:hint="Precio"
+                        android:hint="From"
                         android:textSize="12sp"
                         android:textFontWeight="400"/>
 
@@ -209,9 +211,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
-                        android:textFontWeight="600"
                         android:fontFamily="@font/inter"
                         android:hint="$ 1,000"
+                        android:textFontWeight="600"
                         android:textSize="16sp" />
 
                 </LinearLayout>

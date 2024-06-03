@@ -4,5 +4,5 @@ import com.example.parcial.data.model.BestFlight
 
 
 data class FlightResponse(
-    val flightsList: List<BestFlight>
+    val best_flights: List<BestFlight>
 )

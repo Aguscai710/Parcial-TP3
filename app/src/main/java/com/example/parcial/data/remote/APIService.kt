@@ -2,6 +2,7 @@ package com.example.parcial.data.remote
 
 import com.example.parcial.model.FlightResponse
 import retrofit2.http.GET
+import retrofit2.http.Url
 
 
 interface ApiService {

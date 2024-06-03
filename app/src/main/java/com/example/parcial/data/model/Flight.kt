@@ -12,5 +12,6 @@ data class Flight(
     val legroom: String,
     val often_delayed_by_over_30_min: Boolean,
     val overnight: Boolean,
-    val travel_class: String
+    val travel_class: String,
+    val price: Int,
 )
