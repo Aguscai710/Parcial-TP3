@@ -1,6 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.offers.OffersFragment">
@@ -9,21 +9,21 @@
         android:id="@+id/container1"
         android:layout_width="340dp"
         android:layout_height="200dp"
-        android:background="@drawable/border_rad"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border_rad">
 
         <LinearLayout
-            android:layout_margin="5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/favorite_button1"
                 android:layout_width="36dp"
                 android:layout_height="31dp"
-                android:background="@color/white"
                 android:layout_gravity="end"
+                android:background="@color/white"
                 android:src="@drawable/baseline_favorite_border_24" />
 
             <TextView
@@ -31,14 +31,14 @@
                 android:layout_height="wrap_content"
                 android:background="#32D4AD"
                 android:padding="5dp"
-                android:text="LIMITED OFFER!"
+                android:text="@string/limited_offer"
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Get 20% disount with your Master credit cards"
+                android:text="@string/get_20_disount_with_your_master_credit_cards"
                 android:textSize="19sp"
                 android:textStyle="bold" />
 
@@ -56,43 +56,47 @@
         android:id="@+id/container2"
         android:layout_width="340dp"
         android:layout_height="200dp"
-        android:background="@drawable/border_rad"
         android:layout_below="@id/container1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border_rad">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/favorite_button2"
                 android:layout_width="36dp"
                 android:layout_height="31dp"
-                android:background="@color/white"
                 android:layout_gravity="end"
-                android:src="@drawable/baseline_favorite_24" />
+                android:background="@color/white"
+                android:src="@drawable/baseline_favorite_24"
+                android:contentDescription="@string/button" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LIMITED OFFER!"
-                android:textSize="13sp"
                 android:background="#32D4AD"
-                android:textStyle="bold"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:text="@string/limited_offer"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Get 20% disount with your Master credit cards"
+                android:text="@string/get_20_disount_with_your_master_credit_cards"
                 android:textSize="19sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <ImageView
                 android:layout_width="327dp"
                 android:layout_height="86dp"
-                android:src="@drawable/offer2" />
+                android:src="@drawable/offer2"
+                android:contentDescription="@string/offers" />
 
         </LinearLayout>
 

@@ -14,25 +14,18 @@ import com.example.parcial.ui.main.MainActivity
 
 class OffersFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = OffersFragment()
-    }
     private var isFavorite = false
-
-    private val viewModel: OffersViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-       val view = inflater.inflate(R.layout.fragment_offers, container, false)
+        val view = inflater.inflate(R.layout.fragment_offers, container, false)
 
         val favoriteButton = view.findViewById<ImageButton>(R.id.favorite_button1)
         val favoriteButton2 = view.findViewById<ImageButton>(R.id.favorite_button2)
 
-
-
-        favoriteButton.setOnClickListener{
+        favoriteButton.setOnClickListener {
             isFavorite = !isFavorite
 
             // Actualizar la apariencia del botón según el estado
@@ -42,7 +35,7 @@ class OffersFragment : Fragment() {
                 favoriteButton.setImageResource(R.drawable.baseline_favorite_24)
             }
         }
-        favoriteButton2.setOnClickListener{
+        favoriteButton2.setOnClickListener {
             isFavorite = !isFavorite
 
             // Actualizar la apariencia del botón según el estado
@@ -52,9 +45,6 @@ class OffersFragment : Fragment() {
                 favoriteButton2.setImageResource(R.drawable.baseline_favorite_24)
             }
         }
-
-
-
 
         return view
     }

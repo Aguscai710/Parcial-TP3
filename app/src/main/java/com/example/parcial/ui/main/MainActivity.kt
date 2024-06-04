@@ -102,8 +102,8 @@ class MainActivity : AppCompatActivity() {
         navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         supportActionBar?.setDisplayShowTitleEnabled(false)
         val navController = navHostFragment.navController
-        NavigationUI.setupActionBarWithNavController(this,navController,drawerLayout)
-        NavigationUI.setupWithNavController(navigationView ,navController)
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+        NavigationUI.setupWithNavController(navigationView, navController)
 
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -113,12 +113,14 @@ class MainActivity : AppCompatActivity() {
                     drawerLayout.closeDrawers()
                     true
                 }
+
                 R.id.settingsFragment -> {
                     replaceFragment(SettingsFragment())
 
                     drawerLayout.closeDrawers()
                     true
                 }
+
                 else -> false
             }
         }
@@ -127,19 +129,32 @@ class MainActivity : AppCompatActivity() {
         setupDrawerLayout()
 
     }
-    private fun setupDrawerLayout(){
-        drawerToggle = ActionBarDrawerToggle(this, drawerLayout, binding.toolbar, R.string.open, R.string.close)
+
+    private fun setupDrawerLayout() {
+        drawerToggle = ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            binding.toolbar,
+            R.string.open,
+            R.string.close
+        )
         drawerLayout.addDrawerListener(drawerToggle)
         drawerToggle.syncState()
     }
+
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.nav_host, fragment)
             .commit()
     }
+
     override fun onSupportNavigateUp(): Boolean {
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
-        return NavigationUI.navigateUp(navHostFragment.navController, drawerLayout) || super.onSupportNavigateUp()
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
+        return NavigationUI.navigateUp(
+            navHostFragment.navController,
+            drawerLayout
+        ) || super.onSupportNavigateUp()
     }
 
 

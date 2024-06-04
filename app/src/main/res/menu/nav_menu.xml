@@ -3,22 +3,21 @@
     <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/navmenuprofile"
-        android:title="Profile" />
+        android:title="@string/profile" />
     <item
         android:id="@+id/none1"
         android:icon="@drawable/navmenunotification"
-        android:title="Notification" />
+        android:title="@string/notification" />
     <item
         android:id="@+id/none2"
         android:icon="@drawable/navmenugethelp"
-        android:title="Get Help" />
+        android:title="@string/get_help" />
     <item
         android:id="@+id/none3"
         android:icon="@drawable/navmenucalendar"
-        android:title="Calendar" />
+        android:title="@string/calendar" />
     <item
         android:id="@+id/settingsFragment"
         android:icon="@drawable/navmenusettings"
-        android:title="Settings"
-        />
+        android:title="@string/settings" />
 </menu>

@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
@@ -32,7 +31,8 @@
                     android:id="@+id/ivAirlineLogo"
                     android:layout_width="48dp"
                     android:layout_height="32dp"
-                    android:background="@color/blue" />
+                    android:background="@color/blue"
+                    android:contentDescription="@string/logotype" />
 
                 <TextView
                     android:id="@+id/txtAirlineName"
@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:height="16dp"
                     android:fontFamily="@font/inter"
-                    android:hint="Airline Name"
+                    android:hint="@string/airline_name"
                     android:paddingStart="8dp"
                     android:paddingEnd="0dp"
                     android:textSize="14sp" />
@@ -55,7 +55,8 @@
                 <ImageView
                     android:layout_width="19dp"
                     android:layout_height="19dp"
-                    android:src="@drawable/reloj" />
+                    android:src="@drawable/reloj"
+                    android:contentDescription="@string/clock" />
 
                 <TextView
                     android:id="@+id/txtDuration"
@@ -63,7 +64,7 @@
                     android:layout_height="16dp"
                     android:height="16dp"
                     android:fontFamily="@font/inter"
-                    android:hint="1 hr 40 min"
+                    android:hint="@string/_1_hr_40_min"
                     android:paddingStart="8dp"
                     android:paddingEnd="0dp"
                     android:textSize="12sp" />
@@ -89,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter"
-                    android:hint="ID"
+                    android:hint="@string/id"
                     android:textColor="@color/blue2"
                     android:textFontWeight="700"
                     android:textSize="20sp" />
@@ -99,7 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter"
-                    android:hint="Nombre"
+                    android:hint="@string/airport_name"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -111,7 +112,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="Airplane"
+                    android:contentDescription="@string/airplane"
                     android:src="@drawable/airplane" />
 
             </LinearLayout>
@@ -127,7 +128,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter"
-                    android:hint="ID"
+                    android:hint="@string/id"
                     android:textColor="@color/blue2"
                     android:textFontWeight="700"
                     android:textSize="20sp" />
@@ -137,7 +138,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter"
-                    android:hint="Nombre"
+                    android:hint="@string/airport_name"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -147,7 +148,8 @@
             android:layout_width="343dp"
             android:layout_height="36dp"
             android:layout_marginTop="107dp"
-            android:src="@drawable/line" />
+            android:src="@drawable/line"
+            android:contentDescription="@string/line" />
 
         <LinearLayout
             android:layout_width="343dp"
@@ -186,7 +188,7 @@
                         android:layout_height="16dp"
                         android:layout_marginStart="8dp"
                         android:fontFamily="@font/inter"
-                        android:hint="Business class"
+                        android:hint="@string/seat_class"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -202,9 +204,9 @@
                         android:layout_width="37dp"
                         android:layout_height="16dp"
                         android:fontFamily="@font/inter"
-                        android:hint="From"
-                        android:textSize="12sp"
-                        android:textFontWeight="400"/>
+                        android:text="@string/from"
+                        android:textFontWeight="400"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tvPrice"
@@ -212,7 +214,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:fontFamily="@font/inter"
-                        android:hint="$ 1,000"
+                        android:hint="@string/_1_000"
                         android:textFontWeight="600"
                         android:textSize="16sp" />
 
@@ -224,13 +226,14 @@
                 android:layout_width="319dp"
                 android:layout_height="44dp"
                 android:layout_marginTop="8dp">
-            <Button
-                android:layout_width="319dp"
-                android:layout_height="44dp"
-                android:text="View Details"
-                android:textSize="14sp"
-                android:backgroundTint="@color/yellow"
-                app:cornerRadius="0dp"/>
+
+                <Button
+                    android:layout_width="319dp"
+                    android:layout_height="44dp"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/view_details"
+                    android:textSize="14sp"
+                    app:cornerRadius="0dp" />
 
             </LinearLayout>
 

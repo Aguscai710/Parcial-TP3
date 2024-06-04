@@ -10,111 +10,117 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/boracay" />
-    <FrameLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/background_image"
-    android:padding="10dp">
+        android:src="@drawable/boracay"
+        android:contentDescription="@string/background" />
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="16dp">
-
-
-        <TextView
-            android:id="@+id/text_boracay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Boracay"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:paddingEnd="8dp" />
-        <TextView
-            android:id="@+id/text_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="$349"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginStart="260dp" />
-
-        <TextView
-            android:id="@+id/text_philippines"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Philippines"
-            android:textSize="16sp"
-            android:textColor="#808080" />
-
-        <TextView
-            android:id="@+id/text_overview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Overview"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
-
-        <TextView
-            android:id="@+id/text_paragraph"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Spend 5 days and 4 nights in one of the best islands in the world! Bask in the sun while walking in the white sand beach and enjoy the night partying at the popular seaside bars."
-            android:textSize="16sp"
-            android:layout_marginTop="8dp" />
-
-        <TextView
-            android:id="@+id/text_photo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Photo"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+        android:layout_below="@id/background_image"
+        android:padding="10dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:id="@+id/image1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/borocay1"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="8dp" />
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
 
 
-            <ImageView
-                android:id="@+id/image2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/borocay2"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="8dp" />
+            <TextView
+                android:id="@+id/text_boracay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="@string/boracay"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="260dp"
+                android:text="@string/_349"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_philippines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/philippines"
+                android:textColor="#808080"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/text_overview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/overview"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_paragraph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/spend_5_days_and_4_nights_in_one_of_the_best_islands_in_the_world_bask_in_the_sun_while_walking_in_the_white_sand_beach_and_enjoy_the_night_partying_at_the_popular_seaside_bars"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/text_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/photo"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/borocay1"
+                    android:contentDescription="@string/image_boracay" />
 
 
-            <ImageView
-                android:id="@+id/image3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/borocay3"
-                android:scaleType="centerCrop" />
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/borocay2"
+                    android:contentDescription="@string/image_boracay" />
 
-        <Button
-            android:id="@+id/button_book_now"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:text="Book now"
-            android:layout_marginTop="40dp"
-            android:layout_gravity="center"/>
+
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/borocay3"
+                    android:contentDescription="@string/image_boracay" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_book_now"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:text="@string/book_now" />
         </LinearLayout>
     </FrameLayout>
 

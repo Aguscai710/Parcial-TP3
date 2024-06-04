@@ -1,4 +1,4 @@
-package com.example.parcial.ui.Adapters
+package com.example.parcial.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.parcial.ui.Entidades.DestinosExplore
+import com.example.parcial.data.model.DestinosExplore
 import com.example.parcial.R
+
 class DestinationsExploreAdapter(private val destinations: List<DestinosExplore>) :
     RecyclerView.Adapter<DestinationsExploreAdapter.DestinationViewHolder>() {
 

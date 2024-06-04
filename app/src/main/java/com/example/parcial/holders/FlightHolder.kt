@@ -3,18 +3,12 @@ package com.example.parcial.holders
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.parcial.R
-import com.example.parcial.data.model.Flight
 import com.example.parcial.databinding.FragmentItemResultsBinding
 
 
 class FlightHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-    private var _binding: FragmentItemResultsBinding? = null
 
     val airline: TextView = itemView.findViewById(R.id.txtAirlineName)
     val duration: TextView = itemView.findViewById(R.id.txtDuration)

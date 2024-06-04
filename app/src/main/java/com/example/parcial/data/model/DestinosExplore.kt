@@ -1,4 +1,4 @@
-package com.example.parcial.ui.Entidades
+package com.example.parcial.data.model
 
 data class DestinosExplore(
     val nombre: String,

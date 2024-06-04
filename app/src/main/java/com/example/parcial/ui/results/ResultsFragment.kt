@@ -25,12 +25,6 @@ class ResultsFragment : Fragment() {
     private var _binding: FragmentResultsBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: ResultsViewModel by viewModels()
-
-    companion object {
-        fun newInstance() = ResultsFragment()
-    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,7 +41,7 @@ class ResultsFragment : Fragment() {
         return binding.root
     }
 
-    private fun  fetchFlights() {
+    private fun fetchFlights() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val response = RetrofitClient.apiService.getFlights()

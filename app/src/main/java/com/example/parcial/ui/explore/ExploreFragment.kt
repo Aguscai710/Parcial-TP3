@@ -1,36 +1,31 @@
 package com.example.parcial.ui.explore
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial.databinding.FragmentExploreBinding
-import com.example.parcial.ui.Adapters.DestinationsExploreAdapter
-import com.example.parcial.ui.Entidades.DestinosExplore
+import com.example.parcial.adapters.DestinationsExploreAdapter
+import com.example.parcial.data.model.DestinosExplore
 import com.example.parcial.R
-import com.example.parcial.ui.results.ResultsFragment
 
 class ExploreFragment : Fragment() {
 
-
     private lateinit var DestinosRecyclerView: RecyclerView
     private lateinit var DestinosAdapter: DestinationsExploreAdapter
-
     private var _binding: FragmentExploreBinding? = null
     private val binding get() = _binding!!
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,20 +34,17 @@ class ExploreFragment : Fragment() {
         _binding = FragmentExploreBinding.inflate(inflater, container, false)
 
         DestinosRecyclerView = _binding!!.trendingDestinations
-        DestinosRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        DestinosRecyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         DestinosAdapter = DestinationsExploreAdapter(obtenerDestinos())
         DestinosRecyclerView.adapter = DestinosAdapter
 
         val borocay: ImageView = _binding!!.parisExplore
-        borocay.setOnClickListener{
+        borocay.setOnClickListener {
             val fragment = BoracayFragment()
             val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.nav_host,fragment)?.commit()
+            transaction?.replace(R.id.nav_host, fragment)?.commit()
         }
-
-
-
-
 
         return binding.root
     }
@@ -61,6 +53,7 @@ class ExploreFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
     private fun obtenerDestinos(): List<DestinosExplore> {
         return listOf(
             DestinosExplore("Boracay", "Philippines", "5D4N", R.drawable.boracay),

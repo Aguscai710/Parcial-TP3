@@ -26,9 +26,6 @@ import java.util.*
 
 class SearchFragment : Fragment() {
 
-    private lateinit var navController: NavController
-
-    private val viewModel: SearchViewModel by viewModels()
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
 
@@ -54,12 +51,11 @@ class SearchFragment : Fragment() {
         }
 
 
-
         // Handle button click to navigate to ItemResultsFragment
         binding.buttonSearch.setOnClickListener {
             val fragment = ResultsFragment()
             val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.nav_host,fragment)?.commit()
+            transaction?.replace(R.id.nav_host, fragment)?.commit()
         }
 
         // Configuración de los Spinners
@@ -73,12 +69,13 @@ class SearchFragment : Fragment() {
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-        val datePickerDialog = DatePickerDialog(requireContext(), { _, selectedYear, selectedMonth, selectedDay ->
-            val selectedDate = Calendar.getInstance()
-            selectedDate.set(selectedYear, selectedMonth, selectedDay)
-            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.US)
-            editText.setText(dateFormat.format(selectedDate.time))
-        }, year, month, day)
+        val datePickerDialog =
+            DatePickerDialog(requireContext(), { _, selectedYear, selectedMonth, selectedDay ->
+                val selectedDate = Calendar.getInstance()
+                selectedDate.set(selectedYear, selectedMonth, selectedDay)
+                val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+                editText.setText(dateFormat.format(selectedDate.time))
+            }, year, month, day)
 
         datePickerDialog.show()
     }
@@ -86,13 +83,15 @@ class SearchFragment : Fragment() {
     private fun setupSpinners() {
         // Configuración del spinner de pasajeros
         val passengersArray = arrayOf("1", "2", "3", "4")
-        val passengersAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, passengersArray)
+        val passengersAdapter =
+            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, passengersArray)
         passengersAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerPassengers.adapter = passengersAdapter
 
         // Configuración del spinner de clase
         val classArray = arrayOf("Economy", "Premium", "First")
-        val classAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, classArray)
+        val classAdapter =
+            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, classArray)
         classAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerClass.adapter = classAdapter
     }
