@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
+        //Convertir a modo oscuro - funciona pero crashea
         val sharedPreferences: SharedPreferences =
             getSharedPreferences("user_preferences", Context.MODE_PRIVATE)
         val isDarkMode = sharedPreferences.getBoolean("dark_mode", false)
