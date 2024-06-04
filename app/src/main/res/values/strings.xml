@@ -5,4 +5,6 @@
     <string name="close">Close</string>
     <string name="list_header_res">ListHeaderRes</string>
     <string name="txt_results">ListHeaderResults</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

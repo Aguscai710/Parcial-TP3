@@ -10,7 +10,11 @@
         android:id="@+id/exploreFragment"
         android:name="com.example.parcial.ui.explore.ExploreFragment"
         android:label="fragment_explore"
-        tools:layout="@layout/fragment_explore" />
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_exploreFragment_to_boracayFragment"
+            app:destination="@id/boracayFragment" />
+    </fragment>
     <fragment
         android:id="@+id/offersFragment"
         android:name="com.example.parcial.ui.offers.OffersFragment"
@@ -49,4 +53,9 @@
         android:id="@+id/mainActivity"
         android:name="com.example.parcial.ui.main.MainActivity"
         android:label="MainActivity" />
+    <fragment
+        android:id="@+id/boracayFragment"
+        android:name="com.example.parcial.ui.explore.BoracayFragment"
+        android:label="fragment_borocay"
+        tools:layout="@layout/fragment_borocay" />
 </navigation>

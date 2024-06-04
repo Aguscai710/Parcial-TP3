@@ -109,11 +109,13 @@ class MainActivity : AppCompatActivity() {
             when (menuItem.itemId) {
                 R.id.profileFragment -> {
                     replaceFragment(ProfileFragment())
+
                     drawerLayout.closeDrawers()
                     true
                 }
                 R.id.settingsFragment -> {
                     replaceFragment(SettingsFragment())
+
                     drawerLayout.closeDrawers()
                     true
                 }
@@ -139,6 +141,8 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         return NavigationUI.navigateUp(navHostFragment.navController, drawerLayout) || super.onSupportNavigateUp()
     }
+
+
 }
 
 

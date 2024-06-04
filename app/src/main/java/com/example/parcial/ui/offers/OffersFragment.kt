@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.widget.Toolbar
 import com.example.parcial.R
+import com.example.parcial.ui.main.MainActivity
 
 class OffersFragment : Fragment() {
 
